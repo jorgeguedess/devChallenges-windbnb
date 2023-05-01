@@ -3,7 +3,8 @@ import useFetch from "./useFetch";
 
 const useData = () => {
   const { data, setData, loading, error, request } = useFetch();
-  const pathData = "src/data/hotels.json";
+  const pathData =
+    "https://raw.githubusercontent.com/jorgeguedess/devChallenges-windbnb/main/src/data/hotels.json";
 
   useEffect(() => {
     request(pathData);
