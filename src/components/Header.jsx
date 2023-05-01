@@ -1,3 +1,5 @@
+import React from "react";
+import P from "prop-types";
 import { MdClose } from "react-icons/md";
 import useModal from "../hooks/useModal";
 import HeaderMenu from "./HeaderMenu";
@@ -48,6 +50,10 @@ const Header = ({ setNewData }) => {
       </header>
     </>
   );
+};
+
+Header.propTypes = {
+  setNewData: P.func.isRequired,
 };
 
 export default Header;

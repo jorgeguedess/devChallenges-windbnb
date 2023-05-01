@@ -1,8 +1,8 @@
+import React from "react";
 import P from "prop-types";
 import { MdStar } from "react-icons/md";
 import styles from "../styles/scss/Hotel.module.scss";
 
-// eslint-disable-next-line consistent-return
 const pathImage = (data, size) => {
   if (data) {
     return `https://raw.githubusercontent.com/jorgeguedess/devChallenges-windbnb/main/src/images/hotel/${data.name_image}_${size}.jpg`;
@@ -11,7 +11,6 @@ const pathImage = (data, size) => {
 
 const Hotel = ({ hotel, loading }) => {
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {hotel && loading && <p>Loading...</p>}
       {hotel && !loading ? (
@@ -57,4 +56,5 @@ export default Hotel;
 
 Hotel.propTypes = {
   hotel: P.object.isRequired,
+  loading: P.bool,
 };

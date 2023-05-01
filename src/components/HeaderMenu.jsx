@@ -1,7 +1,4 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable consistent-return */
+import React from "react";
 import { useCallback, useEffect, useState } from "react";
 import P from "prop-types";
 
@@ -27,7 +24,6 @@ const HeaderMenu = ({ modalIsOpen, openModal, closeModal, setNewData }) => {
       const totalPeoples = Number(hotels.adults) + Number(hotels.childrens);
       let arrayHotels = [];
       if (data) {
-        // eslint-disable-next-line array-callback-return
         data.filter((item) => {
           const acceptTotalGuests =
             totalPeoples >= 0 && item.guests >= totalPeoples;
@@ -243,4 +239,5 @@ HeaderMenu.propTypes = {
   modalIsOpen: P.bool.isRequired,
   openModal: P.func.isRequired,
   closeModal: P.func.isRequired,
+  setNewData: P.func.isRequired,
 };

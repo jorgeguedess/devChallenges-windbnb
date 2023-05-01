@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import useData from "./hooks/useData";
 
 import Header from "./components/Header";

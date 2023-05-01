@@ -22,8 +22,10 @@ const useFetch = () => {
     } finally {
       setData(json);
       setLoading(false);
-      // eslint-disable-next-line no-unsafe-finally
-      return { response, json };
+      const result = { response, json };
+      () => {
+        return result;
+      };
     }
   }, []);
 

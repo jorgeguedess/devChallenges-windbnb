@@ -1,3 +1,6 @@
+import React from "react";
+import P from "prop-types";
+
 import useData from "../hooks/useData";
 
 import Hotel from "./Hotel";
@@ -37,6 +40,10 @@ const Hotels = ({ newData }) => {
       </section>
     </main>
   );
+};
+
+Hotels.propTypes = {
+  newData: P.array.isRequired,
 };
 
 export default Hotels;
