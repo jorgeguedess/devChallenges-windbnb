@@ -4,7 +4,6 @@ const useResize = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    console.log("executou o resize");
     function handleResize() {
       setScreenWidth(window.innerWidth);
     }

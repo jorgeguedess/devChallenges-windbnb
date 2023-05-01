@@ -28,7 +28,6 @@
   .menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(calc($width-card - 10rem), 1fr));
-    // justify-content: space-between;
     gap: clamp(1rem, 3vw, 2rem);
 
     @include small() {

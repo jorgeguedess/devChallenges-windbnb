@@ -1,4 +1,3 @@
-// import P from "prop-types";
 import { MdClose } from "react-icons/md";
 import useModal from "../hooks/useModal";
 import HeaderMenu from "./HeaderMenu";

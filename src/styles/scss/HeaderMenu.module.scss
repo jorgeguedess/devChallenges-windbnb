@@ -11,6 +11,10 @@
   max-width: clamp(30rem, 30vw, 40rem);
   height: 5.5rem;
 
+  &:focus {
+    border: 1px solid #000;
+  }
+
   @include small() {
     margin-inline: auto;
   }

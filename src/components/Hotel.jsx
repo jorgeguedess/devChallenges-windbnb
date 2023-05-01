@@ -5,7 +5,7 @@ import styles from "../styles/scss/Hotel.module.scss";
 // eslint-disable-next-line consistent-return
 const pathImage = (data, size) => {
   if (data) {
-    return `/src/images/hotel/${data.name_image}_${size}.jpg`;
+    return `https://raw.githubusercontent.com/jorgeguedess/devChallenges-windbnb/main/src/images/hotel/${data.name_image}_${size}.jpg`;
   }
 };
 

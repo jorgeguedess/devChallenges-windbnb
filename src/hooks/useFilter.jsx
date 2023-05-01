@@ -30,15 +30,15 @@ const useFilter = () => {
           }
         });
       }
-      if (closeModal) closeModal();
       setNewData(arrayHotels);
+      if (closeModal) closeModal();
       return arrayHotels;
     },
     [hotels, newData]
   );
 
   useEffect(() => {
-    if (newData.length) {
+    if (newData?.length) {
       console.log(newData);
     }
   }, [newData]);

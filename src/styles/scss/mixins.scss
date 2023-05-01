@@ -49,7 +49,6 @@
 }
 
 @mixin flex-wrap($value: nowrap) {
-  // No Webkit Box fallback.
   -webkit-flex-wrap: $value;
   -moz-flex-wrap: $value;
 
