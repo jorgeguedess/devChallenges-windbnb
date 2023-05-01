@@ -1,0 +1,101 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.card {
+  padding: .5rem;
+
+  @include medium(661px) {
+    max-width: $width-card;
+    justify-self: start;
+
+    &:nth-child(odd) {
+      justify-self: start;
+    }
+
+    &:nth-child(even) {
+      justify-self: end;
+    }
+  }
+
+  @include small() {
+    max-width: initial;
+  }
+
+  .card_image {
+    display: block;
+    margin-bottom: 1.6rem;
+
+    img {
+      width: 100%;
+      border-radius: 2.4rem;
+      object-fit: cover;
+      object-position: center;
+      height: clamp(23.8rem, 50vh, 26.9rem);
+      pointer-events: none;
+
+      @include small() {
+        height: auto;
+      }
+    }
+  }
+
+  .card_content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr fit-content;
+    @include justify-content(space-between);
+    @include align-items(center);
+
+    .description {
+      @include flexbox;
+      @include flex-wrap(wrap);
+      gap: clamp(.6rem, 5vw, 1rem);
+      @include align-items(center);
+
+      .host {
+        width: fit-content;
+        display: inline-block;
+        font-size: $size-xs;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color-2;
+
+        border: .1rem solid $color-2;
+        border-radius: 1.2rem;
+        padding: .6rem clamp(.6rem, 2vw, 1rem);
+      }
+
+      p {
+        font-size: $size-s;
+        font-weight: 500;
+        color: $color-2;
+      }
+    }
+
+    .rating {
+      width: fit-content;
+      font-size: $size-s;
+      font-weight: 500;
+      color: $color-2;
+
+      @include flexbox;
+      @include align-items(center);
+      margin-left: auto;
+
+      svg {
+        width: 1.6rem;
+        fill: $primary-color;
+      }
+    }
+
+    .title {
+      margin-top: 1.6rem;
+      font-size: clamp(1.4rem, 4vw, 1.6rem);
+      font-weight: 600;
+      color: $color-1;
+
+      grid-column: span 2;
+    }
+  }
+
+}

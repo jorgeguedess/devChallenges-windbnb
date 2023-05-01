@@ -1,0 +1,43 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $family-primary;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $size-m;
+  color: $color-1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+button {
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+}
+
+ul,
+li {
+  list-style: none;
+}

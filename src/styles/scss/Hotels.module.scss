@@ -1,0 +1,46 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.hotels {
+  flex: 1;
+  margin-bottom: clamp(1.6rem, 20vh, 6.4rem);
+
+  .header {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+    @include align-items(center);
+    margin-bottom: clamp(2.4rem, 4vh, 3.2rem);
+
+    h1 {
+      font-size: $size-xl;
+      font-weight: 700;
+      color: $color-1;
+    }
+
+    span {
+      font-size: $size-s;
+      font-weight: 500;
+      color: $color-2;
+    }
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc($width-card - 10rem), 1fr));
+    // justify-content: space-between;
+    gap: clamp(1rem, 3vw, 2rem);
+
+    @include small() {
+      grid-template-columns: repeat(auto-fit, minmax(calc(($width-card / 2)), 1fr));
+    }
+
+    .message {
+      padding-top: 10%;
+      height: 100%;
+      margin: auto 0;
+      text-align: center;
+    }
+  }
+
+}

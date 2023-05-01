@@ -1,0 +1,66 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+.fade {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+.header {
+  padding-top: clamp(1rem, 10vh, 3rem) !important;
+  margin-bottom: clamp(4rem, 10vh, 6.7rem);
+  z-index: 10;
+
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(space-between);
+  gap: 1rem;
+
+  @include small() {
+    @include flex-direction(column);
+  }
+
+  a {
+    @include small() {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.infoModal {
+  width: 100%;
+  @include flexbox;
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  @include justify-content(space-between);
+  margin-bottom: 1.6rem;
+
+  h4 {
+    font: 700 $size-xs $family-secondary;
+    color: $color-2;
+  }
+
+  button {
+    padding: .5rem;
+
+    svg {
+      font-size: $size-l;
+      color: $color-2;
+    }
+  }
+}
+
+.containerModal {
+  background: #FFF;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
