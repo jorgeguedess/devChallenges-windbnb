@@ -2,20 +2,49 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable consistent-return */
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import P from "prop-types";
 
 import { MdSearch, MdLocationPin } from "react-icons/md";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
-import useFilter from "../hooks/useFilter";
 import useData from "../hooks/useData";
 
 import styles from "../styles/scss/HeaderMenu.module.scss";
 
-const HeaderMenu = ({ modalIsOpen, openModal, closeModal }) => {
+const infoHotels = {
+  location: "",
+  adults: 0,
+  childrens: 0,
+};
+
+const HeaderMenu = ({ modalIsOpen, openModal, closeModal, setNewData }) => {
   const { data } = useData();
-  const { hotels, setHotels, filterHotel } = useFilter();
+  const [hotels, setHotels] = useState(infoHotels);
+
+  const filterHotel = useCallback(
+    (closeModal = null) => {
+      const totalPeoples = Number(hotels.adults) + Number(hotels.childrens);
+      let arrayHotels = [];
+      if (data) {
+        // eslint-disable-next-line array-callback-return
+        data.filter((item) => {
+          const acceptTotalGuests =
+            totalPeoples >= 0 && item.guests >= totalPeoples;
+          const checkLocation = hotels.location
+            ? item.location === hotels.location
+            : true;
+          if (acceptTotalGuests && checkLocation) {
+            arrayHotels = [...arrayHotels, item];
+          }
+        });
+      }
+      setNewData(arrayHotels);
+      if (closeModal) closeModal();
+      return arrayHotels;
+    },
+    [hotels]
+  );
 
   const [menuLocation, setMenuLocation] = useState(false);
   const [menuGuests, setMenuGuests] = useState(false);

@@ -7,7 +7,7 @@ import Logo from "../images/logo.svg";
 import styles from "../styles/scss/Header.module.scss";
 import useResize from "../hooks/useResize";
 
-const Header = () => {
+const Header = ({ setNewData }) => {
   const { modalIsOpen, openModal, closeModal } = useModal();
   const { screenWidth } = useResize();
 
@@ -42,6 +42,7 @@ const Header = () => {
             modalIsOpen={modalIsOpen}
             openModal={openModal}
             closeModal={closeModal}
+            setNewData={setNewData}
           />
         </div>
       </header>

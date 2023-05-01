@@ -9,11 +9,12 @@ const pathImage = (data, size) => {
   }
 };
 
-const Hotel = ({ hotel }) => {
+const Hotel = ({ hotel, loading }) => {
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      {hotel ? (
+      {hotel && loading && <p>Loading...</p>}
+      {hotel && !loading ? (
         <div className={styles.card}>
           <picture className={styles.card_image}>
             <source
